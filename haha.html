@@ -1,0 +1,2872 @@
+import React from "react";
+
+export default function Home() {
+  return (
+    <>
+      <div className="relative min-h-screen flex items-center justify-center px-4">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('./search-bg.jpg')" }}
+        ></div>
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center px-4">
+          {/* Hero Text */}
+          <div className="text-center text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
+              One million success stories.
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl">
+              Start yours today.
+            </p>
+          </div>
+
+          {/* Search Container */}
+          <div className="bg-white bg-opacity-95 p-6 rounded-lg shadow-lg w-full max-w-5xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 items-end">
+              {/* Job Search */}
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Keywords / Job Title
+                </label>
+                <div className="flex flex-col sm:flex-row">
+                  <input
+                    type="text"
+                    className="flex-1 p-3 border border-gray-300 rounded-md sm:rounded-l-md sm:rounded-r-none focus:outline-none max-w-full sm:max-w-[200px]"
+                    placeholder="Enter Skills or job title"
+                  />
+                  <button className="bg-green-500 text-white px-6 py-3 rounded-md sm:rounded-r-md sm:rounded-l-none hover:bg-green-600 transition duration-300 w-full sm:w-auto mt-2 sm:mt-0">
+                    SEARCH JOB
+                  </button>
+                </div>
+              </div>
+
+              {/* Dropdowns */}
+              <div className="w-full sm:w-auto">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Select Functional Area
+                </label>
+                <select className="w-full p-3 border border-gray-300 rounded-md max-w-full sm:max-w-[200px] hover:bg-gray-100 transition duration-300">
+                  <option>Select Functional Area</option>
+                </select>
+              </div>
+              <div className="w-full sm:w-auto">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Select Country
+                </label>
+                <select className="w-full p-3 border border-gray-300 rounded-md max-w-full sm:max-w-[200px] hover:bg-gray-100 transition duration-300">
+                  <option>India</option>
+                </select>
+              </div>
+              <div className="w-full sm:w-auto">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Select State
+                </label>
+                <select className="w-full p-3 border border-gray-300 rounded-md max-w-full sm:max-w-[200px] hover:bg-gray-100 transition duration-300">
+                  <option>Select State</option>
+                </select>
+              </div>
+              <div className="w-full sm:w-auto">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Select City
+                </label>
+                <select className="w-full p-3 border border-gray-300 rounded-md max-w-full sm:max-w-[200px] hover:bg-gray-100 transition duration-300">
+                  <option>Select City</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Feature */}
+
+      <div className="container mx-auto p-4">
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-4">Featured Companies</h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            {Array.from({ length: 8 }).map((_, index) => (
+              <div
+                key={index}
+                className="w-24 h-24 bg-gray-200 rounded flex items-center justify-center"
+              >
+                <img
+                  src="https://via.placeholder.com/80"
+                  alt="Company Logo"
+                  className="max-w-full max-h-full"
+                />
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-6 mt-8 flex items-center justify-between">
+            <div className="text-white">
+              <h3 className="text-xl font-semibold">
+                ADVERTISE YOUR BUSINESS HERE
+              </h3>
+              <p className="text-sm mt-2">$200 PER MONTH</p>
+            </div>
+            <button className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500">
+              CONTACT NOW
+            </button>
+          </div>
+
+          <div className="mt-8">
+            <h2 className="text-2xl font-semibold mb-4">Browse Jobs By</h2>
+            <div className="flex space-x-4">
+              <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Functional Area
+              </button>
+              <button className="text-gray-700 px-4 py-2 rounded hover:bg-gray-200">
+                Cities
+              </button>
+              <button className="text-gray-700 px-4 py-2 rounded hover:bg-gray-200">
+                Industries
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Job Categories */}
+
+      <div className="container mx-auto p-4">
+        <div className="mt-8 text-center">
+          <h2 className="text-3xl font-semibold mb-4">Featured Jobs</h2>
+          <button className="bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600">
+            View All Featured Jobs
+          </button>
+        </div>
+
+        <div className="mt-16 text-center">
+          <h2 className="text-3xl font-semibold mb-4">
+            Are You Looking For Job!
+          </h2>
+          <p className="text-gray-600 mb-8">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+            nunc ex, maximus vel felis ut, vestibulum tristique enim. Proin eu
+            nulla est. Maecenas tempor euismod suscipit. Sed at libero ante.
+            Vestibulum nec odio lacus.
+          </p>
+          <button className="bg-green-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-600">
+            Get Started Today
+          </button>
+        </div>
+
+        <div className="mt-20 text-center">
+          <h2 className="text-3xl font-semibold mb-8">How It Works</h2>
+          <div className="flex flex-wrap justify-center gap-8">
+            <div className="w-full sm:w-1/3">
+              <h3 className="text-xl font-semibold mb-2">Create An Account</h3>
+              <p className="text-gray-600">
+                Duis aute irure dolor in reprehenderit in
+              </p>
+            </div>
+            <div className="w-full sm:w-1/3">
+              <h3 className="text-xl font-semibold mb-2">Search Desired Job</h3>
+              <p className="text-gray-600">
+                Lorem ipsum dolor sit amet, consectetur
+              </p>
+            </div>
+            <div className="w-full sm:w-1/3">
+              <h3 className="text-xl font-semibold mb-2">Send Your Resume</h3>
+              <p className="text-gray-600">
+                Excepteur sint occaecat cupidatat non proident
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+
+      <div className="container mx-auto p-4">
+        <div className="mt-8 text-center">
+          <h2 className="text-3xl font-semibold mb-4">Latest Jobs</h2>
+          <button className="bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600">
+            View All Latest Jobs
+          </button>
+        </div>
+
+        <div className="mt-16 text-center bg-gray-200 p-8 rounded-lg">
+          <h2 className="text-3xl font-semibold mb-4">Success Stories</h2>
+          <h3 className="text-xl font-semibold mb-2">Testimonials</h3>
+          <div className="mt-8">
+            <h4 className="text-lg font-semibold mb-2">Garry Miller Jr</h4>
+            <p className="text-gray-600">CEO - Gates Inc</p>
+            <blockquote className="mt-4 text-gray-700">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              pretium nunc non justo placerat pulvinar. Vestibulum ac
+              ullamcorper sapien, nec scelerisque ipsum. Aliquam in tempus
+              nulla. Curabitur ac pulvinar elit. Donec sed iaculis lorem."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      {/* footer */}
+
+      <div className="container mx-auto p-4">
+        <div className="mt-8 bg-white p-6 rounded-lg shadow-md flex">
+          <div className="w-1/2">
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/FxiskmF16gU"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className="w-1/2 pl-6">
+            <h2 className="text-2xl font-semibold mb-4">Watch Our Video</h2>
+            <p className="text-gray-600">
+              Our partners make Milestone products more dynamic and integrations
+              push the limits of what is possible. XProtect® software protects
+              animals from known poachers and protects the city of Minneapolis.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-16 text-center bg-gray-200 p-8 rounded-lg">
+          <h2 className="text-3xl font-semibold mb-4">
+            Are You Looking For Candidates!
+          </h2>
+          <h2 className="text-3xl font-semibold mb-4">Post a Job Today</h2>
+          <p className="text-gray-600 mb-8">and hire the right Candidates</p>
+          <p className="text-gray-600 mb-8">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+            nunc ex, maximus vel felis ut, vestibulum tristique enim. Proin eu
+            nulla est. Maecenas tempor euismod suscipit. Sed at libero ante.
+            Vestibulum nec odio lacus.
+          </p>
+          <button className="bg-green-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-600">
+            Post a Job
+          </button>
+        </div>
+      </div>
+
+      {/* footer */}
+
+      <div className="container mx-auto p-4">
+        <div className="mt-8 text-center">
+          <h2 className="text-3xl font-semibold mb-4">Latest Blogs</h2>
+          <div className="flex flex-wrap justify-center gap-8">
+            <div className="w-full sm:w-1/3 bg-white p-6 rounded-lg shadow-md">
+              <img
+                src="https://via.placeholder.com/400x200"
+                alt="Blog Image"
+                className="mb-4 rounded-lg"
+              />
+              <h3 className="text-xl font-semibold mb-2">
+                Mauris sit amet augue in dolor
+              </h3>
+              <p className="text-gray-600 mb-2">
+                Category: Jobseekers, Employers, Web Designer
+              </p>
+              <p className="text-gray-700">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum risus diam, consectetur pellentesque tempus id,
+                scelerisque vitae odio. Mauris...
+              </p>
+            </div>
+            <div className="w-full sm:w-1/3 bg-white p-6 rounded-lg shadow-md">
+              <img
+                src="https://via.placeholder.com/400x200"
+                alt="Blog Image"
+                className="mb-4 rounded-lg"
+              />
+              <h3 className="text-xl font-semibold mb-2">
+                Vestibulum vel nibh et erat faucibus
+              </h3>
+              <p className="text-gray-600 mb-2">
+                Category: Jobseekers, General
+              </p>
+              <p className="text-gray-700">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum risus diam, consectetur pellentesque tempus id,
+                scelerisque vitae odio. Mauris...
+              </p>
+            </div>
+            <div className="w-full sm:w-1/3 bg-white p-6 rounded-lg shadow-md">
+              <img
+                src="https://via.placeholder.com/400x200"
+                alt="Blog Image"
+                className="mb-4 rounded-lg"
+              />
+              <h3 className="text-xl font-semibold mb-2">
+                How you can get job?
+              </h3>
+              <p className="text-gray-600 mb-2">
+                Category: Jobseekers, General
+              </p>
+              <p className="text-gray-700">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum risus diam, consectetur pellentesque tempus id,
+                scelerisque vitae odio. Mauris...
+              </p>
+            </div>
+          </div>
+          <button className="bg-pink-500 text-white px-6 py-3 rounded-full mt-8 hover:bg-pink-600">
+            View All Blog Posts
+          </button>
+        </div>
+
+        <div className="mt-16 bg-green-200 p-8 rounded-lg">
+          <h2 className="text-2xl font-semibold mb-4">Newsletter</h2>
+          <p className="text-gray-700 mb-4">
+            Subscribe to our newsletter and stay updated
+          </p>
+          <div className="flex flex-wrap">
+            <input
+              type="text"
+              placeholder="Name"
+              className="w-full sm:w-1/3 p-3 rounded-lg mr-2 mb-2 sm:mb-0"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full sm:w-1/3 p-3 rounded-lg mr-2 mb-2 sm:mb-0"
+            />
+            <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600">
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* footer */}
+      <div className="container mx-auto p-4">
+        <div className="mt-16 bg-green-200 p-8 rounded-lg">
+          <h2 className="text-2xl font-semibold mb-4">Newsletter</h2>
+          <p className="text-gray-700 mb-4">
+            Subscribe to our newsletter and stay updated
+          </p>
+          <div className="flex flex-wrap">
+            <input
+              type="text"
+              placeholder="Name"
+              className="w-full sm:w-1/3 p-3 rounded-lg mr-2 mb-2 sm:mb-0"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full sm:w-1/3 p-3 rounded-lg mr-2 mb-2 sm:mb-0"
+            />
+            <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600">
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-6 flex items-center justify-between">
+          <div className="text-white">
+            <h3 className="text-xl font-semibold">
+              ADVERTISE YOUR BUSINESS HERE
+            </h3>
+            <p className="text-sm mt-2">$200 PER MONTH</p>
+          </div>
+          <button className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500">
+            CONTACT NOW
+          </button>
+        </div>
+
+        <div className="mt-8 bg-gray-800 text-white p-8 rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Home
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Contact Us
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Post a Job
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    FAQS
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    About Us
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Terms Of Use
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">
+                Jobs By Functional Area
+              </h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Marketing
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Medicine
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Software & Web Development
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Electronics Technician
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Admin
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Database Administration (DBA)
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Business Management
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Graphic Design
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Business Systems Analyst
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Creative Design
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Jobs By Industry</h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Fashion
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Banking / Financial Services
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    AutoMobile
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Electronics
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Advertising / PR
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Travel / Tourism / Transportation
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Health & Fitness
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Courier / Logistics
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Manufacturing
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Information Technology
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+              <p className="mb-2">Pisoli , Pune , India</p>
+              <p className="mb-2">phpsoftwarestore@gmail.com</p>
+              <p>+91 8271897347</p>
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <p>
+              Copyright © 2025 JOBS PORTAL All Rights Reserved . Design by PHP
+              Software Store
+            </p>
+            <div className="mt-4">
+              <img
+                src="https://via.placeholder.com/50x20"
+                alt="PayPal"
+                className="inline-block mr-4"
+              />
+              <img
+                src="https://via.placeholder.com/50x20"
+                alt="Stripe"
+                className="inline-block"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React from 'react'
+
+export default function About() {
+  return (
+    <>
+      <div className="bg-gray-100">
+        <div className="container mx-auto p-4">
+          <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-semibold">About Us</h2>
+              <div className="text-sm text-gray-600">Home / About Us</div>
+            </div>
+            <div className="text-gray-700">
+              <p className="mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                eleifend posuere magna vel suscipit. Interdum et malesuada fames
+                ac ante ipsum primis in faucibus. Morbi hendrerit imperdiet ex
+                quis rutrum. Phasellus mattis mauris tincidunt, facilisis tortor
+                ut, tincidunt justo. Duis interdum metus libero, vitae finibus
+                quam bibendum a. Duis est nisi, rutrum id purus id, condimentum
+                rutrum nulla. Suspendisse sodales cursus dolor, ac vehicula elit
+                semper eget. Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Aenean bibendum leo metus, non sagittis arcu pharetra
+                quis. Nullam sollicitudin ultricies lectus, id tincidunt odio.
+                In hac habitasse platea dictumst. Nunc in nisi nibh. Ut
+                dignissim ex id iaculis interdum. Donec ullamcorper nec orci a
+                ullamcorper. Mauris volutpat tincidunt tellus, vitae sagittis
+                urna pharetra pharetra.
+              </p>
+              <p className="mb-4">
+                Curabitur fermentum, massa a finibus porttitor, felis lorem
+                congue lacus, imperdiet sollicitudin nisl tortor a magna.
+                Phasellus eget arcu sed elit sagittis pellentesque. Sed sit amet
+                mattis lacus. Suspendisse quis vehicula lorem, eget ullamcorper
+                neque. Aliquam vitae sapien erat. Vestibulum eget mauris sit
+                amet turpis dapibus dignissim et ac libero. Etiam vulputate, ex
+                vel dictum volutpat, arcu arcu varius massa, a pulvinar velit
+                justo non ligula. Donec a metus sit amet purus fermentum
+                pellentesque. Class aptent taciti sociosqu ad litora torquent
+                per conubia nostra, per inceptos himenaeos.
+              </p>
+              <p className="mb-4">
+                Nam aliquet odio vitae finibus auctor. Etiam lorem dui,
+                sollicitudin placerat felis quis, molestie posuere eros. Nunc id
+                tellus quis ligula iaculis tempor. Etiam tincidunt augue diam,
+                et faucibus lacus rhoncus id. Integer eu lectus at sem
+                sollicitudin dapibus.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* footer */}
+      <div className="container mx-auto p-4">
+        <div className="mt-16 bg-green-200 p-8 rounded-lg">
+          <h2 className="text-2xl font-semibold mb-4">Newsletter</h2>
+          <p className="text-gray-700 mb-4">
+            Subscribe to our newsletter and stay updated
+          </p>
+          <div className="flex flex-wrap">
+            <input
+              type="text"
+              placeholder="Name"
+              className="w-full sm:w-1/3 p-3 rounded-lg mr-2 mb-2 sm:mb-0"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full sm:w-1/3 p-3 rounded-lg mr-2 mb-2 sm:mb-0"
+            />
+            <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600">
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-6 flex items-center justify-between">
+          <div className="text-white">
+            <h3 className="text-xl font-semibold">
+              ADVERTISE YOUR BUSINESS HERE
+            </h3>
+            <p className="text-sm mt-2">$200 PER MONTH</p>
+          </div>
+          <button className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500">
+            CONTACT NOW
+          </button>
+        </div>
+
+        <div className="mt-8 bg-gray-800 text-white p-8 rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Home
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Contact Us
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Post a Job
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    FAQS
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    About Us
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Terms Of Use
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">
+                Jobs By Functional Area
+              </h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Marketing
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Medicine
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Software & Web Development
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Electronics Technician
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Admin
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Database Administration (DBA)
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Business Management
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Graphic Design
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Business Systems Analyst
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Creative Design
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Jobs By Industry</h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Fashion
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Banking / Financial Services
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    AutoMobile
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Electronics
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Advertising / PR
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Travel / Tourism / Transportation
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Health & Fitness
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Courier / Logistics
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Manufacturing
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Information Technology
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+              <p className="mb-2">Pisoli , Pune , India</p>
+              <p className="mb-2">phpsoftwarestore@gmail.com</p>
+              <p>+91 8271897347</p>
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <p>
+              Copyright © 2025 JOBS PORTAL All Rights Reserved . Design by PHP
+              Software Store
+            </p>
+            <div className="mt-4">
+              <img
+                src="https://via.placeholder.com/50x20"
+                alt="PayPal"
+                className="inline-block mr-4"
+              />
+              <img
+                src="https://via.placeholder.com/50x20"
+                alt="Stripe"
+                className="inline-block"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+import React from 'react'
+
+export default function Blog() {
+  return (
+    <>
+      <div className="container mx-auto p-4">
+        <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-semibold">Blog</h2>
+            <div className="text-sm text-gray-600">Home / Blog</div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                src="placeholder-image-1.jpg"
+                alt="Blog Post 1"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold mb-2">
+                  Mauris sit amet augue in dolor
+                </h3>
+                <p className="text-sm text-gray-600 mb-2">
+                  Category: Jobseekers, Employers, Web Designer
+                </p>
+                <p className="text-gray-700">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum risus diam, consectetur pellentesque tempus id,
+                  scelerisque vitae odio. Mauris...
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                src="placeholder-image-2.jpg"
+                alt="Blog Post 2"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold mb-2">
+                  Vestibulum vel nibh et erat faucibus
+                </h3>
+                <p className="text-sm text-gray-600 mb-2">
+                  Category: Jobseekers, General
+                </p>
+                <p className="text-gray-700">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum risus diam, consectetur pellentesque tempus id,
+                  scelerisque vitae odio. Mauris...
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md p-4">
+              <div className="mb-4">
+                <input
+                  type="text"
+                  placeholder="Search"
+                  className="w-full p-2 border rounded"
+                />
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold mb-2">Categories</h4>
+                <ul className="list-disc list-inside">
+                  <li>Jobseekers</li>
+                  <li>Employers</li>
+                  <li>General</li>
+                  <li>Web Designer</li>
+                  <li>Web Developer</li>
+                  <li>Generative Modeling Review</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* footer */}
+      <div className="container mx-auto p-4">
+        <div className="mt-16 bg-green-200 p-8 rounded-lg">
+          <h2 className="text-2xl font-semibold mb-4">Newsletter</h2>
+          <p className="text-gray-700 mb-4">
+            Subscribe to our newsletter and stay updated
+          </p>
+          <div className="flex flex-wrap">
+            <input
+              type="text"
+              placeholder="Name"
+              className="w-full sm:w-1/3 p-3 rounded-lg mr-2 mb-2 sm:mb-0"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full sm:w-1/3 p-3 rounded-lg mr-2 mb-2 sm:mb-0"
+            />
+            <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600">
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-6 flex items-center justify-between">
+          <div className="text-white">
+            <h3 className="text-xl font-semibold">
+              ADVERTISE YOUR BUSINESS HERE
+            </h3>
+            <p className="text-sm mt-2">$200 PER MONTH</p>
+          </div>
+          <button className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500">
+            CONTACT NOW
+          </button>
+        </div>
+
+        <div className="mt-8 bg-gray-800 text-white p-8 rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Home
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Contact Us
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Post a Job
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    FAQS
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    About Us
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Terms Of Use
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">
+                Jobs By Functional Area
+              </h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Marketing
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Medicine
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Software & Web Development
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Electronics Technician
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Admin
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Database Administration (DBA)
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Business Management
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Graphic Design
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Business Systems Analyst
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Creative Design
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Jobs By Industry</h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Fashion
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Banking / Financial Services
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    AutoMobile
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Electronics
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Advertising / PR
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Travel / Tourism / Transportation
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Health & Fitness
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Courier / Logistics
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Manufacturing
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Information Technology
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+              <p className="mb-2">Pisoli , Pune , India</p>
+              <p className="mb-2">phpsoftwarestore@gmail.com</p>
+              <p>+91 8271897347</p>
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <p>
+              Copyright © 2025 JOBS PORTAL All Rights Reserved . Design by PHP
+              Software Store
+            </p>
+            <div className="mt-4">
+              <img
+                src="https://via.placeholder.com/50x20"
+                alt="PayPal"
+                className="inline-block mr-4"
+              />
+              <img
+                src="https://via.placeholder.com/50x20"
+                alt="Stripe"
+                className="inline-block"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+
+
+
+
+
+
+import React from 'react'
+
+export default function Companies() {
+  return (
+    <>
+      <div className="container mx-auto p-4">
+        <div className="mt-8">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-2xl font-semibold">All Companies</h2>
+            <div className="text-sm">Home / All Companies</div>
+          </div>
+          <div className="flex items-center mb-4">
+            <input
+              type="text"
+              placeholder='keywords e.g. "Google"'
+              className="w-full p-2 border rounded-l-md"
+            />
+            <button className="bg-green-500 text-white px-4 py-2 rounded-r-md hover:bg-green-600">
+              Search Company
+            </button>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="bg-white rounded-lg shadow-md p-4">
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Power Color Logo"
+                className="mx-auto mb-2"
+              />
+              <p className="text-center font-semibold mb-2">POWER COLOR</p>
+              <p className="text-center text-sm text-gray-600 mb-2">
+                COMPANY SALOGAN
+              </p>
+              <p className="text-center text-sm text-gray-600">Power Color</p>
+              <p className="text-center text-sm text-gray-600">
+                Your Location Address USA
+              </p>
+              <p className="text-center text-sm text-gray-600">
+                Current jobs: 0
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-4">
+              <img
+                src="https://via.placeholder.com/150"
+                alt="AutoSoft Dynamics Logo"
+                className="mx-auto mb-2"
+              />
+              <p className="text-center font-semibold mb-2">no image</p>
+              <p className="text-center text-sm text-gray-600">
+                AutoSoft Dynamics
+              </p>
+              <p className="text-center text-sm text-gray-600">
+                Kennesaw, GA USA
+              </p>
+              <p className="text-center text-sm text-gray-600">
+                Current jobs: 0
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-4">
+              <img
+                src="https://via.placeholder.com/150"
+                alt="New Design Studio Logo"
+                className="mx-auto mb-2"
+              />
+              <p className="text-center font-semibold mb-2">NetDesign</p>
+              <p className="text-center text-sm text-gray-600">
+                New Design Studio
+              </p>
+              <p className="text-center text-sm text-gray-600">
+                Atlantic City, NJ USA
+              </p>
+              <p className="text-center text-sm text-gray-600">
+                Current jobs: 0
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-4">
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Surf Wave Logo"
+                className="mx-auto mb-2"
+              />
+              <p className="text-center font-semibold mb-2">SURFWAVE</p>
+              <p className="text-center text-sm text-gray-600">Surf Wave</p>
+              <p className="text-center text-sm text-gray-600">
+                Your Location Address USA
+              </p>
+              <p className="text-center text-sm text-gray-600">
+                Current jobs: 0
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* footer */}
+      <div className="container mx-auto p-4">
+        <div className="mt-16 bg-green-200 p-8 rounded-lg">
+          <h2 className="text-2xl font-semibold mb-4">Newsletter</h2>
+          <p className="text-gray-700 mb-4">
+            Subscribe to our newsletter and stay updated
+          </p>
+          <div className="flex flex-wrap">
+            <input
+              type="text"
+              placeholder="Name"
+              className="w-full sm:w-1/3 p-3 rounded-lg mr-2 mb-2 sm:mb-0"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full sm:w-1/3 p-3 rounded-lg mr-2 mb-2 sm:mb-0"
+            />
+            <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600">
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-6 flex items-center justify-between">
+          <div className="text-white">
+            <h3 className="text-xl font-semibold">
+              ADVERTISE YOUR BUSINESS HERE
+            </h3>
+            <p className="text-sm mt-2">$200 PER MONTH</p>
+          </div>
+          <button className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500">
+            CONTACT NOW
+          </button>
+        </div>
+
+        <div className="mt-8 bg-gray-800 text-white p-8 rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Home
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Contact Us
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Post a Job
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    FAQS
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    About Us
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Terms Of Use
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">
+                Jobs By Functional Area
+              </h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Marketing
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Medicine
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Software & Web Development
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Electronics Technician
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Admin
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Database Administration (DBA)
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Business Management
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Graphic Design
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Business Systems Analyst
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Creative Design
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Jobs By Industry</h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Fashion
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Banking / Financial Services
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    AutoMobile
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Electronics
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Advertising / PR
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Travel / Tourism / Transportation
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Health & Fitness
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Courier / Logistics
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Manufacturing
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Information Technology
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+              <p className="mb-2">Pisoli , Pune , India</p>
+              <p className="mb-2">phpsoftwarestore@gmail.com</p>
+              <p>+91 8271897347</p>
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <p>
+              Copyright © 2025 JOBS PORTAL All Rights Reserved . Design by PHP
+              Software Store
+            </p>
+            <div className="mt-4">
+              <img
+                src="https://via.placeholder.com/50x20"
+                alt="PayPal"
+                className="inline-block mr-4"
+              />
+              <img
+                src="https://via.placeholder.com/50x20"
+                alt="Stripe"
+                className="inline-block"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+
+
+
+
+import React from 'react'
+
+export default function Contract() {
+  return (
+    <>
+      <div className="bg-gray-100">
+        <div className="container mx-auto p-4">
+          <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-semibold">Contact Us</h2>
+              <div className="text-sm text-gray-600">Home / Contact Us</div>
+            </div>
+
+            <div className="text-center mb-8">
+              <h3 className="text-xl font-semibold mb-2">
+                We Are Here For Your Help
+              </h3>
+              <h2 className="text-3xl font-bold mb-4">GET IN TOUCH FAST</h2>
+              <p className="text-gray-700">
+                Vestibulum at magna tellus. Vivamus sagittis nunc aliquet.
+                Vivamin orci aliquam eros vel saphicula. Donec eget ultricies
+                ipsmconsequat.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-white rounded-lg p-4 flex flex-col items-center">
+                <h4 className="text-lg font-semibold mb-2">ADDRESS:</h4>
+                <p className="text-gray-700">Pisoli, Pune, India</p>
+              </div>
+
+              <div className="bg-white rounded-lg p-4 flex flex-col items-center">
+                <h4 className="text-lg font-semibold mb-2">EMAIL ADDRESS:</h4>
+                <p className="text-blue-600">phpsoftwarestore@gmail.com</p>
+              </div>
+
+              <div className="bg-white rounded-lg p-4 flex flex-col items-center">
+                <h4 className="text-lg font-semibold mb-2">PHONE:</h4>
+                <p className="text-gray-700">+91 8271897347</p>
+                <p className="text-gray-700">+91 9975119727</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.561570144465!2d73.88214691489258!3d18.49029968739198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c07073b6495f%3A0x6b40285a8677c733!2sPisoli%2C%20Pune%2C%20Maharashtra%20411060%2C%20India!5e0!3m2!1sen!2sus!4v1701956578502!5m2!1sen!2sus"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  className="w-full p-2 border rounded mb-4"
+                />
+                <input
+                  type="text"
+                  placeholder="Phone"
+                  className="w-full p-2 border rounded"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full p-2 border rounded mb-4"
+                />
+                <input
+                  type="text"
+                  placeholder="Subject"
+                  className="w-full p-2 border rounded"
+                />
+              </div>
+            </div>
+
+            <div>
+              <textarea
+                placeholder="Message"
+                className="w-full p-2 border rounded mt-4"
+                rows="6"
+              ></textarea>
+            </div>
+
+            <div className="mt-6 flex justify-center">
+              <button className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded">
+                SUBMIT NOW
+              </button>
+            </div>
+
+            <div className="mt-6 text-center">
+              <div className="text-red-500">
+                ERROR for site owner: Invalid domain for site key
+              </div>
+              <div className="flex justify-center mt-2">
+                <div className="w-24 h-8 bg-gray-200 rounded"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* footer */}
+      <div className="container mx-auto p-4">
+        <div className="mt-16 bg-green-200 p-8 rounded-lg">
+          <h2 className="text-2xl font-semibold mb-4">Newsletter</h2>
+          <p className="text-gray-700 mb-4">
+            Subscribe to our newsletter and stay updated
+          </p>
+          <div className="flex flex-wrap">
+            <input
+              type="text"
+              placeholder="Name"
+              className="w-full sm:w-1/3 p-3 rounded-lg mr-2 mb-2 sm:mb-0"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full sm:w-1/3 p-3 rounded-lg mr-2 mb-2 sm:mb-0"
+            />
+            <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600">
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-6 flex items-center justify-between">
+          <div className="text-white">
+            <h3 className="text-xl font-semibold">
+              ADVERTISE YOUR BUSINESS HERE
+            </h3>
+            <p className="text-sm mt-2">$200 PER MONTH</p>
+          </div>
+          <button className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500">
+            CONTACT NOW
+          </button>
+        </div>
+
+        <div className="mt-8 bg-gray-800 text-white p-8 rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Home
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Contact Us
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Post a Job
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    FAQS
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    About Us
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Terms Of Use
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">
+                Jobs By Functional Area
+              </h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Marketing
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Medicine
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Software & Web Development
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Electronics Technician
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Admin
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Database Administration (DBA)
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Business Management
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Graphic Design
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Business Systems Analyst
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Creative Design
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Jobs By Industry</h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Fashion
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Banking / Financial Services
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    AutoMobile
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Electronics
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Advertising / PR
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Travel / Tourism / Transportation
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Health & Fitness
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Courier / Logistics
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Manufacturing
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Information Technology
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+              <p className="mb-2">Pisoli , Pune , India</p>
+              <p className="mb-2">phpsoftwarestore@gmail.com</p>
+              <p>+91 8271897347</p>
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <p>
+              Copyright © 2025 JOBS PORTAL All Rights Reserved . Design by PHP
+              Software Store
+            </p>
+            <div className="mt-4">
+              <img
+                src="https://via.placeholder.com/50x20"
+                alt="PayPal"
+                className="inline-block mr-4"
+              />
+              <img
+                src="https://via.placeholder.com/50x20"
+                alt="Stripe"
+                className="inline-block"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+
+
+
+
+
+import React from 'react'
+
+export default function Job() {
+  return (
+    <>
+      <div className="container mx-auto p-4">
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold mb-4">Job Listing</h2>
+          <div className="flex items-center mb-4">
+            <input
+              type="text"
+              placeholder="Enter Skills, Job title or Location"
+              className="w-full p-2 border rounded-l-md"
+            />
+            <button className="bg-green-500 text-white px-4 py-2 rounded-r-md hover:bg-green-600">
+              Search Jobs
+            </button>
+          </div>
+
+          <div className="flex flex-wrap">
+            <div className="w-full md:w-1/4">
+              <button className="bg-gray-200 text-gray-700 px-4 py-2 rounded-md mb-2 w-full flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.158a2.033 2.033 0 01-1.595 1.437L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                  />
+                </svg>
+                Save Job Alert
+              </button>
+              <button className="bg-pink-500 text-white px-4 py-2 rounded-md mb-2 w-full">
+                Upload Your Resume
+              </button>
+              <h3 className="text-lg font-semibold mt-4 mb-2">Jobs By Title</h3>
+              <h3 className="text-lg font-semibold mb-2">Jobs By Country</h3>
+              <h3 className="text-lg font-semibold mb-2">Jobs By State</h3>
+              <h3 className="text-lg font-semibold mb-2">Jobs By City</h3>
+            </div>
+            <div className="w-full md:w-3/4 md:pl-4">
+              <div className="flex items-center justify-between mb-4">
+                <p>Showing Pages : - Totalrow 0</p>
+                <p>Sponsored By</p>
+              </div>
+              <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-6 flex items-center justify-between">
+                <div className="text-white">
+                  <h3 className="text-xl font-semibold">
+                    ADVERTISE YOUR BUSINESS HERE
+                  </h3>
+                  <p className="text-sm mt-2">$200 PER MONTH</p>
+                </div>
+                <button className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500">
+                  CONTACT NOW
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">
+                Jobs By Functional Areas
+              </h3>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Jobs By Company</h3>
+            </div>
+          </div>
+          <div className="mt-4">
+            <h3 className="text-lg font-semibold mb-4">Salary Range</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label
+                  htmlFor="salaryFrom"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Salary From
+                </label>
+                <input
+                  type="number"
+                  id="salaryFrom"
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="salaryTo"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Salary To
+                </label>
+                <input
+                  type="number"
+                  id="salaryTo"
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="salaryCurrency"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Select Salary Currency
+                </label>
+                <select
+                  id="salaryCurrency"
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                >
+                  <option value="usd">USD</option>
+                  <option value="eur">EUR</option>
+                  <option value="gbp">GBP</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div className="mt-6 text-center">
+            <button className="bg-pink-500 text-white px-6 py-3 rounded-md hover:bg-pink-600">
+              SEARCH JOBS
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* footer */}
+      <div className="container mx-auto p-4">
+        <div className="mt-16 bg-green-200 p-8 rounded-lg">
+          <h2 className="text-2xl font-semibold mb-4">Newsletter</h2>
+          <p className="text-gray-700 mb-4">
+            Subscribe to our newsletter and stay updated
+          </p>
+          <div className="flex flex-wrap">
+            <input
+              type="text"
+              placeholder="Name"
+              className="w-full sm:w-1/3 p-3 rounded-lg mr-2 mb-2 sm:mb-0"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full sm:w-1/3 p-3 rounded-lg mr-2 mb-2 sm:mb-0"
+            />
+            <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600">
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-6 flex items-center justify-between">
+          <div className="text-white">
+            <h3 className="text-xl font-semibold">
+              ADVERTISE YOUR BUSINESS HERE
+            </h3>
+            <p className="text-sm mt-2">$200 PER MONTH</p>
+          </div>
+          <button className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500">
+            CONTACT NOW
+          </button>
+        </div>
+
+        <div className="mt-8 bg-gray-800 text-white p-8 rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Home
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Contact Us
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Post a Job
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    FAQS
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    About Us
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Terms Of Use
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">
+                Jobs By Functional Area
+              </h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Marketing
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Medicine
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Software & Web Development
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Electronics Technician
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Admin
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Database Administration (DBA)
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Business Management
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Graphic Design
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Business Systems Analyst
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Creative Design
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Jobs By Industry</h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Fashion
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Banking / Financial Services
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    AutoMobile
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Electronics
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Advertising / PR
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Travel / Tourism / Transportation
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Health & Fitness
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Courier / Logistics
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Manufacturing
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Information Technology
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+              <p className="mb-2">Pisoli , Pune , India</p>
+              <p className="mb-2">phpsoftwarestore@gmail.com</p>
+              <p>+91 8271897347</p>
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <p>
+              Copyright © 2025 JOBS PORTAL All Rights Reserved . Design by PHP
+              Software Store
+            </p>
+            <div className="mt-4">
+              <img
+                src="https://via.placeholder.com/50x20"
+                alt="PayPal"
+                className="inline-block mr-4"
+              />
+              <img
+                src="https://via.placeholder.com/50x20"
+                alt="Stripe"
+                className="inline-block"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+
+
+
+
+import React from 'react'
+
+export default function Login() {
+  return (
+    <>
+      <div className="container mx-auto p-4">
+        <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-semibold">Login</h2>
+            <div className="text-sm text-gray-600">Home / Login</div>
+          </div>
+
+          <div className="flex justify-center mb-6">
+            <button className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded mr-2">
+              Candidate
+            </button>
+            <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded">
+              Employer
+            </button>
+          </div>
+
+          <div className="text-center mb-6">
+            <h3 className="text-lg font-semibold mb-2">Login with Social</h3>
+            <div className="flex justify-center">
+              <a
+                href="#"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+              >
+                f
+              </a>
+              <a
+                href="#"
+                className="bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded"
+              >
+                t
+              </a>
+            </div>
+          </div>
+
+          <div className="mb-4">
+            <input
+              type="email"
+              placeholder="Email Address"
+              className="w-full p-2 border rounded"
+            />
+          </div>
+
+          <div className="mb-6">
+            <input
+              type="password"
+              placeholder="Password"
+              className="w-full p-2 border rounded"
+            />
+          </div>
+
+          <div className="mb-6">
+            <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded w-full">
+              LOGIN
+            </button>
+          </div>
+
+          <div className="text-center">
+            <a href="#" className="text-blue-600 hover:underline">
+              New User ? Register Here
+            </a>
+          </div>
+
+          <div className="text-center mt-2">
+            <a href="#" className="text-blue-600 hover:underline">
+              Forgot Your Password ? Click here
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* footer */}
+      <div className="container mx-auto p-4">
+        <div className="mt-16 bg-green-200 p-8 rounded-lg">
+          <h2 className="text-2xl font-semibold mb-4">Newsletter</h2>
+          <p className="text-gray-700 mb-4">
+            Subscribe to our newsletter and stay updated
+          </p>
+          <div className="flex flex-wrap">
+            <input
+              type="text"
+              placeholder="Name"
+              className="w-full sm:w-1/3 p-3 rounded-lg mr-2 mb-2 sm:mb-0"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full sm:w-1/3 p-3 rounded-lg mr-2 mb-2 sm:mb-0"
+            />
+            <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600">
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-6 flex items-center justify-between">
+          <div className="text-white">
+            <h3 className="text-xl font-semibold">
+              ADVERTISE YOUR BUSINESS HERE
+            </h3>
+            <p className="text-sm mt-2">$200 PER MONTH</p>
+          </div>
+          <button className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500">
+            CONTACT NOW
+          </button>
+        </div>
+
+        <div className="mt-8 bg-gray-800 text-white p-8 rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Home
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Contact Us
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Post a Job
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    FAQS
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    About Us
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Terms Of Use
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">
+                Jobs By Functional Area
+              </h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Marketing
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Medicine
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Software & Web Development
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Electronics Technician
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Admin
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Database Administration (DBA)
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Business Management
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Graphic Design
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Business Systems Analyst
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Creative Design
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Jobs By Industry</h3>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Fashion
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Banking / Financial Services
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    AutoMobile
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Electronics
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Advertising / PR
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Travel / Tourism / Transportation
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Health & Fitness
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Courier / Logistics
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Manufacturing
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:text-gray-300">
+                    Information Technology
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+              <p className="mb-2">Pisoli , Pune , India</p>
+              <p className="mb-2">phpsoftwarestore@gmail.com</p>
+              <p>+91 8271897347</p>
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <p>
+              Copyright © 2025 JOBS PORTAL All Rights Reserved . Design by PHP
+              Software Store
+            </p>
+            <div className="mt-4">
+              <img
+                src="https://via.placeholder.com/50x20"
+                alt="PayPal"
+                className="inline-block mr-4"
+              />
+              <img
+                src="https://via.placeholder.com/50x20"
+                alt="Stripe"
+                className="inline-block"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+
+
+
+
+import React, { useState } from "react";
+
+export default function Register() {
+  const [formType, setFormType] = useState("candidate");
+
+  const showForm = (type) => {
+    setFormType(type);
+  };
+  return (
+    <>
+      <div className="bg-gray-100 min-h-screen flex items-center justify-center">
+        <div className="container mx-auto p-4">
+          <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-semibold">Register</h2>
+              <div className="text-sm text-gray-600">Home / Register</div>
+            </div>
+
+            <div className="flex justify-center mb-6">
+              <button
+                onClick={() => showForm("candidate")}
+                className={`${
+                  formType === "candidate"
+                    ? "bg-pink-500 text-white"
+                    : "bg-gray-200 text-gray-800"
+                } hover:bg-pink-600 font-bold py-2 px-4 rounded mr-2`}
+              >
+                Candidate
+              </button>
+              <button
+                onClick={() => showForm("employer")}
+                className={`${
+                  formType === "employer"
+                    ? "bg-pink-500 text-white"
+                    : "bg-gray-200 text-gray-800"
+                } hover:bg-gray-300 font-bold py-2 px-4 rounded`}
+              >
+                Employer
+              </button>
+            </div>
+
+            {/* Candidate Form */}
+            {formType === "candidate" && (
+              <div id="candidateForm">
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    placeholder="Middle Name"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="password"
+                    placeholder="Password Confirmation"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="flex items-center mb-4">
+                  <input
+                    type="checkbox"
+                    id="newsletterCandidate"
+                    className="mr-2"
+                  />
+                  <label
+                    htmlFor="newsletterCandidate"
+                    className="text-gray-700"
+                  >
+                    Subscribe to newsletter
+                  </label>
+                </div>
+              </div>
+            )}
+
+            {/* Employer Form */}
+            {formType === "employer" && (
+              <div id="employerForm">
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    placeholder="Middle Name"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="password"
+                    placeholder="Password Confirmation"
+                    className="w-full p-2 border rounded"
+                  />
+                </div>
+                <div className="flex items-center mb-4">
+                  <input
+                    type="checkbox"
+                    id="newsletterEmployer"
+                    className="mr-2"
+                  />
+                  <label htmlFor="newsletterEmployer" className="text-gray-700">
+                    Subscribe to newsletter
+                  </label>
+                </div>
+                <div className="flex items-center mb-6">
+                  <input type="checkbox" id="terms" className="mr-2" />
+                  <label htmlFor="terms" className="text-gray-700">
+                    I accept Terms of Use
+                  </label>
+                </div>
+                <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded w-full mb-4">
+                  REGISTER
+                </button>
+                <div className="text-center">
+                  <a href="#" className="text-blue-600 hover:underline">
+                    Have Account? Sign in
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+
+
+
+
+import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+
+export default function Navbar() {
+  const [language, setLanguage] = useState("en");
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const mobileMenuRef = useRef(null);
+
+  const languages = {
+    en: {
+      home: "Home",
+      jobs: "Jobs",
+      companies: "Companies",
+      about: "About Us",
+      blog: "Blog",
+      contact: "Contact Us",
+      signIn: "Sign In",
+      register: "Register",
+    },
+    np: {
+      home: "घर",
+      jobs: "काम",
+      companies: "कम्पनीहरू",
+      about: "हाम्रो बारेमा",
+      blog: "ब्लग",
+      contact: "सम्पर्क गर्नुहोस",
+      signIn: "साइन इन",
+      register: "दर्ता गर्नुहोस",
+    },
+  };
+
+  const currentLanguage = languages[language];
+
+  const toggleLanguageDropdown = () => {
+    setIsLanguageDropdownOpen(!isLanguageDropdownOpen);
+  };
+
+  const changeLanguage = (lang) => {
+    setLanguage(lang);
+    setIsLanguageDropdownOpen(false);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsLanguageDropdownOpen(false);
+      }
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target)
+      ) {
+        setIsMobileMenuOpen(false);
+        setIsLanguageDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownRef, mobileMenuRef]);
+
+  return (
+    <nav className="bg-white shadow p-3">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center py-4">
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center">
+              <img
+                src="https://jobportal.bheemainfotech.in/sitesetting_images/thumb/jobs-portal-1573969216-577.png"
+                alt="Jobs Portal"
+                className="h-8 mr-2"
+              />
+            </Link>
+          </div>
+          <div className="md:flex space-x-4 items-center">
+            <Link to="/" className="text-gray-700 hover:text-gray-900">
+              {currentLanguage.home}
+            </Link>
+            <Link to="/job" className="text-gray-700 hover:text-gray-900">
+              {currentLanguage.jobs}
+            </Link>
+            <Link to="/companies" className="text-gray-700 hover:text-gray-900">
+              {currentLanguage.companies}
+            </Link>
+            <Link to="/about" className="text-gray-700 hover:text-gray-900">
+              {currentLanguage.about}
+            </Link>
+            <Link to="/blog" className="text-gray-700 hover:text-gray-900">
+              {currentLanguage.blog}
+            </Link>
+            <Link to="/contract" className="text-gray-700 hover:text-gray-900">
+              {currentLanguage.contact}
+            </Link>
+            <Link to="/login" className="text-gray-700 hover:text-gray-900">
+              {currentLanguage.signIn}
+            </Link>
+            <Link
+              to="/register"
+              className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+            >
+              {currentLanguage.register}
+            </Link>
+            <div className="relative" ref={dropdownRef}>
+              <button
+                className="text-gray-600 hover:text-gray-800"
+                onClick={toggleLanguageDropdown}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5h12M9 3v2m-9 8h12M9 11v2m-4 9L5 21l-4-9m8 0h12M15 21v-2m-4-2v-2"
+                  />
+                </svg>
+              </button>
+              {isLanguageDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg z-10">
+                  <button
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => changeLanguage("en")}
+                  >
+                    English
+                  </button>
+                  <button
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => changeLanguage("np")}
+                  >
+                    Nepali
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="md:hidden">
+            <button
+              onClick={toggleMobileMenu}
+              className="text-gray-600 hover:text-gray-800 focus:outline-none"
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {isMobileMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
+        </div>
+        {isMobileMenuOpen && (
+          <div ref={mobileMenuRef} className="md:hidden mt-2">
+            <div className="flex flex-col space-y-2">
+              <Link
+                to="/"
+                className="text-gray-700 hover:text-gray-900 block py-2 px-4"
+              >
+                {currentLanguage.home}
+              </Link>
+              <Link
+                to="/job"
+                className="text-gray-700 hover:text-gray-900 block py-2 px-4"
+              >
+                {currentLanguage.jobs}
+              </Link>
+              <Link
+                to="/companies"
+                className="text-gray-700 hover:text-gray-900 block py-2 px-4"
+              >
+                {currentLanguage.companies}
+              </Link>
+              <Link
+                to="/about"
+                className="text-gray-700 hover:text-gray-900 block py-2 px-4"
+              >
+                {currentLanguage.about}
+              </Link>
+              <Link
+                to="/blog"
+                className="text-gray-700 hover:text-gray-900 block py-2 px-4"
+              >
+                {currentLanguage.blog}
+              </Link>
+              <Link
+                to="/contract"
+                className="text-gray-700 hover:text-gray-900 block py-2 px-4"
+              >
+                {currentLanguage.contact}
+              </Link>
+
+              <Link
+                to="/login"
+                className="text-gray-700 hover:text-gray-900 block py-2 px-4"
+              >
+                {currentLanguage.signIn}
+              </Link>
+              <Link
+                to="/register"
+                className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 block"
+              >
+                {currentLanguage.register}
+              </Link>
+              <div className="relative">
+                <button
+                  className="text-gray-600 hover:text-gray-800 block py-2 px-4"
+                  onClick={toggleLanguageDropdown}
+                >
+                  Language
+                </button>
+                {isLanguageDropdownOpen && (
+                  <div className="absolute mt-2 w-32 bg-white rounded-md shadow-lg z-10">
+                    <button
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => changeLanguage("en")}
+                    >
+                      English
+                    </button>
+                    <button
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => changeLanguage("np")}
+                    >
+                      Nepali
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+}
