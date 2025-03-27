@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            width: 90%;
+            max-width: 600px;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .quote-container {
+            margin: 2rem 0;
+        }
+
+        #quote {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 1rem;
+        }
+
+        #author {
+            font-style: italic;
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        button {
+            background: #6c5ce7;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background: #5b4bc4;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .loading {
+            display: none;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quote Generator</h1>
+        <div class="quote-container">
+            <div class="loading">Loading...</div>
+            <div id="quote">Click the button to generate a quote!</div>
+            <span id="author"></span>
+        </div>
+        <button onclick="getQuote()">New Quote</button>
+    </div>
+
+    <script>
+        const quotes = [
+            {
+                text: "The only way to do great work is to love what you do.",
+                author: "Steve Jobs"
+            },
+            {
+                text: "Innovation distinguishes between a leader and a follower.",
+                author: "Steve Jobs"
+            },
+            {
+                text: "Your time is limited, don't waste it living someone else's life.",
+                author: "Steve Jobs"
+            },
+            {
+                text: "Stay hungry, stay foolish.",
+                author: "Steve Jobs"
+            },
+            {
+                text: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+                author: "Nelson Mandela"
+            }
+        ];
+
+        const quoteEl = document.getElementById('quote');
+        const authorEl = document.getElementById('author');
+        const loadingEl = document.querySelector('.loading');
+
+        async function getQuote() {
+            // Show loading state
+            loadingEl.style.display = 'block';
+            quoteEl.style.display = 'none';
+            authorEl.style.display = 'none';
+            
+            // Simulate API call delay
+            await new Promise(resolve => setTimeout(resolve, 500));
+
+            try {
+                const randomIndex = Math.floor(Math.random() * quotes.length);
+                const selectedQuote = quotes[randomIndex];
+                
+                quoteEl.textContent = `"${selectedQuote.text}"`;
+                authorEl.textContent = `- ${selectedQuote.author}`;
+                
+                // Hide loading and show content
+                loadingEl.style.display = 'none';
+                quoteEl.style.display = 'block';
+                authorEl.style.display = 'block';
+                
+            } catch (error) {
+                console.error('Error fetching quote:', error);
+                loadingEl.style.display = 'none';
+                quoteEl.textContent = "Failed to fetch quote. Please try again.";
+                quoteEl.style.display = 'block';
+            }
+        }
+
+        // Initial quote
+        getQuote();
+    </script>
+</body>
+</html>

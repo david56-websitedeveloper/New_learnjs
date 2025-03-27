@@ -1,0 +1,39 @@
+Error handling
+
+Reusable functions
+
+State management
+
+Performance optimization (caching, pagination)
+
+Security (API keys, CORS)
+
+
+
+// Next
+
+
+5. Full-Project Templates
+Starter projects you can build:
+
+E-commerce Product Listing (FakeStoreAPI)
+
+Movie Database (OMDb API)
+
+Recipe Search App (Edamam API)
+
+Crypto Tracker (CoinGecko API)
+
+Social Media Dashboard (JSONPlaceholder API)
+
+
+// Next
+
+4. Third-Party API Libraries
+Popular JS libraries for API handling:
+
+Axios (Promise-based HTTP client)
+
+SWR (Stale-While-Revalidate data fetching)
+
+Redux Toolkit Query (Advanced state management + API)

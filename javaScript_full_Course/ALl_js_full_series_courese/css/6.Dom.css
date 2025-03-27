@@ -1,0 +1,25 @@
+body{
+    background-color: aqua;
+    color: white;
+}
+
+h1{
+    text-align: center;
+    background-color: brown;
+    color: white;
+}
+
+p{
+   font-size: 40px;
+    color: black;
+}
+
+h4{
+    color: black;
+    font-size: 45px;
+}
+button{
+    font-size: 30px;
+    color:white;
+    background-color: blue;
+}

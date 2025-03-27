@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIPHY Search</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #1a1a1a;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #00ff88;
+            margin-bottom: 1rem;
+        }
+
+        .search-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        #searchInput {
+            padding: 0.8rem;
+            width: 300px;
+            border-radius: 25px;
+            border: none;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            background: #00ff88;
+            color: #1a1a1a;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .gif-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .gif-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .gif-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .gif-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .gif-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            padding: 1rem;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gif-card:hover .gif-info {
+            opacity: 1;
+        }
+
+        .loading {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #00ff88;
+            margin: 2rem 0;
+            display: none;
+        }
+
+        .error {
+            color: #ff4444;
+            text-align: center;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GIPHY Search</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for GIFs...">
+                <button onclick="searchGIFs()">Search</button>
+            </div>
+        </header>
+        
+        <div class="loading">Loading GIFs...</div>
+        <div class="error"></div>
+        <div class="gif-grid"></div>
+    </div>
+
+    <script>
+        const API_KEY = 'jv4WrxUOm65Mb9vijJDMvhGRcQDzuJNO'; 
+        const gifGrid = document.querySelector('.gif-grid');
+        const loadingEl = document.querySelector('.loading');
+        const errorEl = document.querySelector('.error');
+        const searchInput = document.getElementById('searchInput');
+
+        async function searchGIFs(query = 'trending') {
+            try {
+                loadingEl.style.display = 'block';
+                errorEl.textContent = '';
+                gifGrid.innerHTML = '';
+
+                const response = await fetch(
+                    `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${query}&limit=25&rating=g`
+                );
+                
+                const data = await response.json();
+                
+                if(data.meta.status === 200) {
+                    displayGIFs(data.data);
+                } else {
+                    throw new Error(data.meta.msg);
+                }
+            } catch (error) {
+                console.error('Error fetching GIFs:', error);
+                errorEl.textContent = `Error: ${error.message}`;
+                loadingEl.style.display = 'none';
+            }
+        }
+
+        function displayGIFs(gifs) {
+            loadingEl.style.display = 'none';
+            
+            gifs.forEach(gif => {
+                const gifCard = document.createElement('div');
+                gifCard.className = 'gif-card';
+                
+                const img = document.createElement('img');
+                img.className = 'gif-image';
+                img.src = gif.images.fixed_height.url;
+                img.alt = gif.title;
+                
+                const infoDiv = document.createElement('div');
+                infoDiv.className = 'gif-info';
+                infoDiv.innerHTML = `
+                    <h3>${gif.title || 'Untitled GIF'}</h3>
+                    <p>Rating: ${gif.rating.toUpperCase()}</p>
+                `;
+
+                gifCard.appendChild(img);
+                gifCard.appendChild(infoDiv);
+                gifGrid.appendChild(gifCard);
+            });
+        }
+
+        // Handle Enter key in search input
+        searchInput.addEventListener('keypress', (e) => {
+            if(e.key === 'Enter') searchGIFs(searchInput.value);
+        });
+
+        // Initial load with trending GIFs
+        searchGIFs();
+    </script>
+</body>
+</html>
